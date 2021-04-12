@@ -1,21 +1,21 @@
-print("start")
+with open('new_book.txt','r', encoding='utf-8') as file:
+    with open('new_test.txt','w', encoding='utf-8') as new_file:
+        r = file.readlines()
+        count = -1
+        for i in r:
+            count +=1
+            print(count)
+            i = i.lstrip()
+            i = i.lower()
+            i = i.replace("\n",'')
+            i = i.replace("."," .PERIOD \n")
+            i = i.replace(","," ,COMMA ")
+            i = i.replace(":"," :COLON")
+            i = i.replace(";"," ;SEMICOLON")
+            i = i.replace("?"," ?QUESTION \n")
+            i = i.replace("!"," !EXCLAMATION \n")
+            i = i.replace("..."," ...ELIPSIS \n")
 
-with open("avidreaders.ru__graf-monte-kristo.txt","r", encoding='utf-8') as file :
-    with open("new_avidreaders.ru__graf-monte-kristo.txt","w", encoding='utf-8') as new_file:
-            r =file.readlines()
-        
-        # try:
-            count = -1
-            for i in r :
-                count +=1
-                print(i)
-                if i != '\n':
-                    i = i.lower()
-                    i.split('.')
-                    if  i.find(',') != -1:
-                        pass
-                    new_file.write(i)
-print("end")
-
+            new_file.write(i)
         # except Exception as e:
         #     print('erroe is: ', e)

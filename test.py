@@ -1,5 +1,23 @@
-with open('test.txt','r', encoding='utf-8') as file:
-    r = file.readlines()
-    for i in r:
-        i.lower()
-        print(i)
+
+with open('new_book.txt','r', encoding='utf-8') as file:
+    with open('new_test.txt','w', encoding='utf-8') as new_file:
+        r = file.readlines()
+        count = -1
+        for i in r:
+            count +=1
+            print(count)
+            i = i.lstrip()
+            i = i.lower()
+            i = i.replace("\n",'')
+            i = i.replace("."," .PERIOD \n")
+            i = i.replace(","," ,COMMA ")
+            i = i.replace(":"," :COLON")
+            i = i.replace(";"," ;SEMICOLON")
+            i = i.replace("?"," ?QUESTION \n")
+            i = i.replace("!"," !EXCLAMATION \n")
+            i = i.replace("..."," ...ELIPSIS \n")
+
+            new_file.write(i)
+            # r[count] = i
+
+        # print(r)
